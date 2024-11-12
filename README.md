@@ -71,7 +71,7 @@ query GetUsers {
 
 ### Backend Scripts
 
-- **`node server.js`**: Starts the GraphQL server.
+- **`node apolloServer.js`**: Starts the GraphQL server.
 
 ### Frontend Scripts
 
