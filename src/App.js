@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useQuery, gql } from '@apollo/client';
+
+// Define GraphQL query to get all users
+const GET_USERS = gql`
+  query GetUsers {
+    users {
+      id
+      name
+      email
+      age
+    }
+  }
+`;
 
 function App() {
+  const { loading, error, data } = useQuery(GET_USERS);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>User List</h1>
+      <ul>
+        {data.users.map(user => (
+          <li key={user.id}>
+            <p>Name: {user.name}</p>
+            <p>Email: {user.email}</p>
+            <p>Age: {user.age}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

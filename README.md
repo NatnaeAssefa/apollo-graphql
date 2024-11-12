@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# GraphQL User App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple GraphQL application that demonstrates how to query a list of users with a React frontend and an Apollo Server backend.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+- **Backend**: A Node.js server using Apollo Server to create a GraphQL API.
+- **Frontend**: A React application with Apollo Client to query the GraphQL API and display user data.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Node.js** (v14 or later recommended)
+- **npm** (comes with Node.js) or **yarn**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### 1. Clone the Repository
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/NatnaeAssefa/apollo-graphql.git
+cd apollo-graphql
+```
 
-### `npm run build`
+### 2. Set Up the Backend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navigate to the backend directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   cd backend
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
 
-### `npm run eject`
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Start the Apollo Server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   node server.js
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   The backend server should now be running at `http://localhost:4000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Set Up the Frontend
 
-## Learn More
+1. Open a new terminal, navigate to the frontend directory, and install dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Start the React application:
 
-### Code Splitting
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   The frontend application will open in the browser at `http://localhost:3000` by default.
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Frontend**: You can view a list of users fetched from the GraphQL API.
+- **GraphQL Playground**: You can access the GraphQL Playground at `http://localhost:4000` to test queries directly.
 
-### Making a Progressive Web App
+## Example GraphQL Queries
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+In the GraphQL Playground, you can run the following query to get a list of users:
 
-### Advanced Configuration
+```graphql
+query GetUsers {
+  users {
+    id
+    name
+    email
+    age
+  }
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Project Scripts
 
-### Deployment
+### Backend Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **`node server.js`**: Starts the GraphQL server.
 
-### `npm run build` fails to minify
+### Frontend Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **`npm start`**: Runs the React app in development mode.
+
+## Troubleshooting
+
+1. **Errors related to `react-scripts`**: Run `npm install react-scripts` in the frontend directory.
+2. **Node version issues**: Ensure you’re using a compatible version of Node.js (14 or 16 is recommended).
+
+## License
+
+This project is open-source and available under the MIT License.
