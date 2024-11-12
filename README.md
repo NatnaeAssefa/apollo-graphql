@@ -21,15 +21,9 @@ git clone https://github.com/NatnaeAssefa/apollo-graphql.git
 cd apollo-graphql
 ```
 
-### 2. Set Up the Backend
+### 2. Set Up and run the Backend
 
-1. Navigate to the backend directory:
-
-   ```bash
-   cd backend
-   ```
-
-2. Install dependencies:
+1. Install dependencies:
 
    ```bash
    npm install
@@ -38,20 +32,14 @@ cd apollo-graphql
 3. Start the Apollo Server:
 
    ```bash
-   node server.js
+   node apolloServer.js
    ```
 
    The backend server should now be running at `http://localhost:4000`.
 
-### 3. Set Up the Frontend
+### 3. Set Up and run the Frontend
 
-1. Open a new terminal, navigate to the frontend directory, and install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-2. Start the React application:
+1. Start the React application:
 
    ```bash
    npm start
